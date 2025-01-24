@@ -20,13 +20,16 @@ function Login() {
             localStorage.setItem('name', data.name);
             localStorage.setItem('email', data.email);
             localStorage.setItem('token', data.token);
+            localStorage.setItem('role', data.role);
 
             // Redirect to the dashboard page
             if (data.role === 'admin') {
                 navigate('/admin');
+                // console.log('Admin login successful');
             }
             if (data.role === 'user') {
-                navigate('/admin');
+                navigate('/');
+                // console.log('User login successful');
             };
         } catch (error) {
             console.error(error.response?.data || "An error occurred");

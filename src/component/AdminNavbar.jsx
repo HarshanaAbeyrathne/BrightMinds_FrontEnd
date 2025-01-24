@@ -23,7 +23,7 @@ function AdminNavbar() {
         <ul className="menu menu-horizontal p-0 justify-center">
         <li><Link to="/add-item">Add Item</Link></li>
         <li><Link to="/remove-item">Remove item</Link></li>
-        <li><Link to="/products">Recent Products</Link></li>
+        <li><Link to="#">View All users</Link></li>
         </ul>
       </div>
 
