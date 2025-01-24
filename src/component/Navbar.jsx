@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 function Navbar() {
@@ -20,9 +21,9 @@ function Navbar() {
       {/* Central navigation items */}
       <div className="flex-1 text-center">
         <ul className="menu menu-horizontal p-0 justify-center">
-          <li><a>Home</a></li>
-          <li><a>Service</a></li>
-          <li><a>Recent Products</a></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/items">Items</Link></li>
+          <li><Link to="/todoList">Todo List</Link></li>
           <li><a>Contact</a></li>
           <li><a>About</a></li>
         </ul>

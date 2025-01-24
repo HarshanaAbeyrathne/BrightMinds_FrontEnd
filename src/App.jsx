@@ -8,6 +8,9 @@ import Register from './pages/Register';
 import Admin from './pages/Admin';
 import AddItems from './pages/AddItems';
 import RemoveItems from './pages/RemoveItems';
+import TodoList from './pages/TodoList';
+import AllItems from './pages/AllItems';
+import ItemDetails from './pages/ItemDetails';
 
 
 function App() {
@@ -21,6 +24,9 @@ function App() {
           <Route path="/admin" element={<Admin />} />
           <Route path="/add-item" element={<AddItems />} />
           <Route path="/remove-item" element={<RemoveItems />} />
+          <Route path="/todoList" element={<TodoList />} />
+          <Route path="/items" element={<AllItems />} />
+          <Route path="/items/:id" element={<ItemDetails />} />
         </Routes>
       </div>
     </Router>
