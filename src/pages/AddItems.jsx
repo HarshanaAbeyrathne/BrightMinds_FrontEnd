@@ -9,6 +9,7 @@ function AddItems() {
         description: '',
         material: '',
         stock: '',
+        type: '',
         photo: null
       });
     
@@ -31,7 +32,9 @@ function AddItems() {
         formData.append('description', item.description);
         formData.append('material', item.material);
         formData.append('stock', item.stock);
+        formData.append('type', item.type);
         formData.append('photo', item.photo);
+
     
         // Example: Post data to your server endpoint
         fetch('http://localhost:4000/api/items/add', {
@@ -73,6 +76,36 @@ function AddItems() {
             <span className="label-text">Stock:</span>
           </label>
           <input type="number" name="stock" value={item.stock} onChange={handleChange} className="input input-bordered w-full" />
+
+          {/* <label className="lable">
+            <span className="label-text">Item type:</span>
+          </label>
+          <select name="type" className="select select-bordered w-full">
+            <option value="">Baby Toys</option>
+            <option value="">Bikes ,Rockers,Walkers</option>
+            <option value="">Educational toys</option>
+            <option value="">Musical toys</option>
+            <option value="">Games</option>
+            <option value="">Puzzles</option>
+          </select> */}
+
+          <label className="label">
+              <span className="label-text">Item type:</span>
+            </label>
+            <select
+              name="type"
+              value={item.type} // Bind select value to state
+              onChange={handleChange} // Handle change
+              className="select select-bordered w-full"
+            >
+              <option value="">Select Type</option> {/* Default placeholder */}
+              <option value="Baby Toys">Baby Toys</option>
+              <option value="Bikes, Rockers, Walkers">Bikes, Rockers, Walkers</option>
+              <option value="Educational Toys">Educational Toys</option>
+              <option value="Musical Toys">Musical Toys</option>
+              <option value="Games">Games</option>
+              <option value="Puzzles">Puzzles</option>
+            </select>
 
           <label className="label">
             <span className="label-text">Photo:</span>
