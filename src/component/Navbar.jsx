@@ -19,13 +19,30 @@ function Navbar() {
       </div>
 
       {/* Central navigation items */}
-      <div className="flex-1 text-center">
-        <ul className="menu menu-horizontal p-0 justify-center">
+      <div className=" text-center">
+        <ul className="menu menu-horizontal p-2 justify-center flex-1">
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/items">Items</Link></li>
+          <li><Link to="/items">All Items</Link></li>
+          <li>
+  <details>
+    <summary>Categories</summary>
+    <ul className="p-2 z-10">
+      <li><Link to="/items?type=Baby Toys">Baby Toys</Link></li>
+      <li><Link to="/items?type=Bikes, Rockers, Walkers">Bikes, Rockers, Walkers</Link></li>
+      <li><Link to="/items?type=Educational Toys">Educational Toys</Link></li>
+      <li><Link to="/items?type=Musical Toys">Musical Toys</Link></li>
+      <li><Link to="/items?type=Games">Games</Link></li>
+      <li><Link to="/items?type=Puzzles">Puzzles</Link></li>
+    </ul>
+  </details>
+</li>
+
           <li><Link to="/todoList">Todo List</Link></li>
           <li><a>Contact</a></li>
           <li><a>About</a></li>
+
+
+          
         </ul>
       </div>
 

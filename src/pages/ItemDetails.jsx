@@ -30,7 +30,7 @@ function ItemDetails() {
     <div className='font-poppins'>
         <div className='min-h-screen flex flex-col bg-gradient-to-br from-purple-400 to-pink-300'>
         <Navbar />
-        <button onClick={() => navigate(`/items`)}>Back</button>
+        <button onClick={() => navigate(-1)}>Back</button>
     <div className="item-details p-4">
       <h1 className="text-2xl font-bold">{item.name}</h1>
       <img
