@@ -21,6 +21,7 @@ function Login() {
             localStorage.setItem('email', data.email);
             localStorage.setItem('token', data.token);
             localStorage.setItem('role', data.role);
+            localStorage.setItem('userId', data.userId);
 
             // Redirect to the dashboard page
             if (data.role === 'admin') {

@@ -22,7 +22,7 @@ function Navbar() {
       <div className=" text-center">
         <ul className="menu menu-horizontal p-2 justify-center flex-1">
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/items">All Items</Link></li>
+          {/* <li><Link to="/items">All Items</Link></li> */}
           <li>
   <details>
     <summary>Categories</summary>
@@ -77,7 +77,7 @@ function Navbar() {
               <span className="text-lg font-bold">8 Items</span>
               <span className="text-info">Subtotal: $999</span>
               <div className="card-actions">
-                <button className="btn btn-primary btn-block">View cart</button>
+                <button className="btn btn-primary btn-block"><Link to="/cart">Cart</Link></button>
               </div>
             </div>
           </div>

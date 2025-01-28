@@ -11,7 +11,7 @@ import RemoveItems from './pages/RemoveItems';
 import TodoList from './pages/TodoList';
 import AllItems from './pages/AllItems';
 import ItemDetails from './pages/ItemDetails';
-
+import Cart from './pages/Cart';
 
 
 function App() {
@@ -28,6 +28,7 @@ function App() {
           <Route path="/todoList" element={<TodoList />} />
           <Route path="/items" element={<AllItems />} />
           <Route path="/items/:id" element={<ItemDetails />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </div>
     </Router>

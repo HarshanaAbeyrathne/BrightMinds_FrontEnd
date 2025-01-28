@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import API from '../api/axios';
 import { useNavigate } from 'react-router-dom';
+import API from '../api/axios';
 
-function DisplayAllItems() {
+function DisplayAllItems({ type }) {
   const [items, setItems] = useState([]);
-  const [searchParams] = useSearchParams();
+  const [loading, setLoading] = useState(true); // Loading state
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchItems = async () => {
-      const type = searchParams.get('type'); // Get type from URL
+      setLoading(true); // Start loading
       try {
         const response = await API.get('/api/items/', {
           params: { type }, // Pass type as a query parameter to the backend
@@ -18,21 +17,41 @@ function DisplayAllItems() {
         setItems(response.data);
       } catch (error) {
         console.error('Failed to fetch items:', error);
+        setItems([]); // Reset items on error
+      } finally {
+        setLoading(false); // Stop loading
       }
     };
 
-    fetchItems();
-  }, [searchParams]); // Refetch items when the type changes
+    if (type) {
+      fetchItems();
+    }
+  }, [type]);
+
+  if (loading) {
+    return <p className="text-center p-4">Loading items...</p>;
+  }
+
+  if (items.length === 0) {
+    return (
+      <p className="text-center p-4 text-red-500">
+        Sorry, no items are available for "{type}" at the moment.
+      </p>
+    );
+  }
 
   return (
-    <div className="grid grid-cols-3 gap-4 p-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
       {items.map((item) => (
-        <div key={item._id} className="card bg-gray-200 shadow-xl rounded-lg overflow-hidden w-96">
+        <div
+          key={item._id}
+          className="card bg-gray-200 shadow-xl rounded-lg overflow-hidden w-full md:w-96"
+        >
           <figure className="px-10 pt-10">
             <img
               src={`http://localhost:4000/${item.photo}`}
               alt={item.name}
-              className="rounded-xl h-48 w-full object-cover"
+              className="rounded-xl h-48 w-full object-cover cursor-pointer"
               onClick={() => navigate(`/items/${item._id}`)}
             />
           </figure>
