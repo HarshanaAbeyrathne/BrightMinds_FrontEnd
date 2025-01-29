@@ -7,7 +7,7 @@ function AddItems() {
         name: '',
         price: '',
         description: '',
-        material: '',
+        metirial: '',
         stock: '',
         type: '',
         photo: null
@@ -30,7 +30,7 @@ function AddItems() {
         formData.append('name', item.name);
         formData.append('price', item.price);
         formData.append('description', item.description);
-        formData.append('material', item.material);
+        formData.append('metirial', item.metirial);
         formData.append('stock', item.stock);
         formData.append('type', item.type);
         formData.append('photo', item.photo);
@@ -70,7 +70,7 @@ function AddItems() {
           <label className="label">
             <span className="label-text">Material:</span>
           </label>
-          <input type="text" name="material" value={item.material} onChange={handleChange} className="input input-bordered w-full" />
+          <input type="text" name="metirial" value={item.metirial} onChange={handleChange} className="input input-bordered w-full" />
 
           <label className="label">
             <span className="label-text">Stock:</span>

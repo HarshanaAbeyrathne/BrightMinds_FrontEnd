@@ -12,7 +12,9 @@ import TodoList from './pages/TodoList';
 import AllItems from './pages/AllItems';
 import ItemDetails from './pages/ItemDetails';
 import Cart from './pages/Cart';
-
+import UserProfile from './pages/UserProfile';
+import ContactUs from './pages/ContactUs';
+import AboutUs from './pages/AboutUs';
 
 function App() {
   return (
@@ -29,6 +31,9 @@ function App() {
           <Route path="/items" element={<AllItems />} />
           <Route path="/items/:id" element={<ItemDetails />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/userProfile" element={<UserProfile />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/about" element={<AboutUs />} />
         </Routes>
       </div>
     </Router>
