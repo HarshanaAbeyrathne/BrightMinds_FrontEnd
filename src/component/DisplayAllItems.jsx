@@ -58,7 +58,8 @@ function DisplayAllItems({ type }) {
           <div className="card-body items-center text-center">
             <h2 className="card-title">{item.name}</h2>
             <p>Rs. {item.price}</p>
-            <button className="btn bg-secondary text-white hover:bg-pink-500 hover:text-white">
+            <button className="btn bg-secondary text-white hover:bg-pink-500 hover:text-white"
+            onClick={() => navigate(`/payment?totalAmount=${item.price}`)}>
               Buy Now
             </button>
           </div>

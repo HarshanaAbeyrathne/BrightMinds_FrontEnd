@@ -57,8 +57,8 @@ function Cart() {
 
   const handleProceedToPayment = () => {
     // Redirect to payment page or initiate payment
-    console.log('Proceeding to payment...');
-    alert('Proceeding to payment...'); // Replace with actual payment process
+    window.location.href = `/payment?totalAmount=${cart.totalPrice}`;
+    
   };
 
   if (loading) {
