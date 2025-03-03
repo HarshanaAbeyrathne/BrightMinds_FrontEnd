@@ -16,6 +16,9 @@ import UserProfile from './pages/UserProfile';
 import ContactUs from './pages/ContactUs';
 import AboutUs from './pages/AboutUs';
 import Payment from './pages/Payment';
+import ItemSearch from './pages/ItemSearch';
+import Service from './pages/Service';
+
 
 function App() {
   return (
@@ -36,6 +39,8 @@ function App() {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/payment" element={<Payment />} />
+          <Route path="/search" element={<ItemSearch />} />
+          <Route path="/service" element={<Service />} />
         </Routes>
       </div>
     </Router>
