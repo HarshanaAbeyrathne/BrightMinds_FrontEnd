@@ -22,7 +22,7 @@ function Navbar() {
       <div className=" text-center">
         <ul className="menu menu-horizontal p-2 justify-center flex-1">
   <li><Link to="/">Home</Link></li>
-  <li><Link to="/service">Services</Link></li>
+  <li><Link to="/view-activities">Services</Link></li>
           {/* <li><Link to="/items">All Items</Link></li> */}
   <li>
     <details>

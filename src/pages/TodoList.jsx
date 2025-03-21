@@ -1,7 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../component/Navbar';
+import API from '../api/axios';
 
 function TodoList() {
+
+  const [babies, setBabies] = useState([]);
+  const [milestoness, setMilestoness] = useState([]);
+  // Fetching the user ID from localStorage
+  const userId = localStorage.getItem('userId');
+
+  console.log('User ID:', userId);
+
+  useEffect(() => {
+    fetchBabies();
+  }, [userId]);
+
+  const fetchBabies = async () => {
+    const response = await API.get(`/api/user/${userId}/babies`);
+    // console.log('Babies:', response.data);
+    // console.log('Data:', data);
+    setBabies(response.data);
+    // filterMilestones(data);
+  };
+
+  
+  useEffect(() => {
+    console.log('babies:', babies);
+  }, [babies]);
+
+
   const milestones = [
     { age: "6 weeks to 3 Months", items: ["Able to raise the hand while lying on the hands", "Able to keep looking at something moving from one place to another", "Responds to sudden loud noise by stopping or increasing its activity", "As a response to some stimulus (b.o..t..) it has the ability to feel sounds like"] },
     { age: "3 – 6 Months", items: ["Lifts the head and chest up while standing on hands", "Intertwines fingers and plays with hands", "Reaches out to some material and grasps it with the whole palm", "He / She turns his or her head towards the sound", "Makes single letter sounds (ga-da-ta-da)", "Laughs out loud"] },

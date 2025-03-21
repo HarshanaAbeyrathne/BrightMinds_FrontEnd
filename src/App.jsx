@@ -18,6 +18,10 @@ import AboutUs from './pages/AboutUs';
 import Payment from './pages/Payment';
 import ItemSearch from './pages/ItemSearch';
 import Service from './pages/Service';
+import AddBaby from './pages/AddBaby';
+
+import PdfUploader from './pages/PdfUploader';
+import PdfList from './pages/PdfList';
 
 
 function App() {
@@ -41,6 +45,9 @@ function App() {
           <Route path="/payment" element={<Payment />} />
           <Route path="/search" element={<ItemSearch />} />
           <Route path="/service" element={<Service />} />
+          <Route path="/add-activities" element={<PdfUploader />} />
+          <Route path="/view-activities" element={<PdfList />} />
+          <Route path="/add-baby" element={<AddBaby />} />
         </Routes>
       </div>
     </Router>

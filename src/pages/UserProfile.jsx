@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import API from '../api/axios';
 import Navbar from '../component/Navbar';
+import { Link } from 'react-router-dom';
 
 function UserProfile() {
     const [user, setUser] = useState(null);
@@ -60,7 +61,10 @@ function UserProfile() {
                 <p><strong>Name:</strong> {user?.name}</p>
                 <p><strong>Email:</strong> {user?.email}</p>
             </div>
-
+            
+            <div className="max-w-md mx-auto mt-6 p-6 bg-white shadow-lg rounded-lg">
+            <Link to="/add-baby">i have a baby</Link>
+            </div>
             {/* Progress Section */}
             <div className="max-w-md mx-auto mt-6 p-6 bg-white shadow-lg rounded-lg">
                 <h2 className="text-lg font-semibold text-center pb-4">Child Progress</h2>
